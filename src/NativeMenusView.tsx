@@ -7,5 +7,5 @@ const NativeView: React.ComponentType<NativeMenusViewProps> =
   requireNativeViewManager("NativeMenus");
 
 export default function NativeMenusView(props: NativeMenusViewProps) {
-  return <NativeView style={{ flex: 1, width: "100%" }} {...props} />;
+  return <NativeView style={{ width: 50, height: 50 }} {...props} />;
 }

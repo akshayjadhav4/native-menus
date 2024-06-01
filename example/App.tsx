@@ -6,7 +6,7 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text>Compose Android Dropdown</Text>
-        <NativeMenus.NativeMenusView name="Hello" />
+        <NativeMenus.NativeMenusView />
       </View>
     </SafeAreaView>
   );
@@ -14,9 +14,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: "100%",
+    padding: 10,
+    flexDirection: "row",
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
 });
