@@ -1,4 +1,4 @@
-import * as NativeMenus from "native-menus";
+import { NativeMenusView } from "native-menus";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
@@ -6,7 +6,13 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text>Compose Android Dropdown</Text>
-        <NativeMenus.NativeMenusView />
+        <NativeMenusView
+          menuItems={[
+            { title: "Edit" },
+            { title: "Refresh" },
+            { title: "Delete" },
+          ]}
+        />
       </View>
     </SafeAreaView>
   );

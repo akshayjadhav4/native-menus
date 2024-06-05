@@ -11,8 +11,8 @@ class NativeMenusModule : Module() {
 
 
         View(NativeMenusView::class) {
-            Prop("name") { view: NativeMenusView, prop: String ->
-                println(prop)
+            Prop("menuItems") { view: NativeMenusView, prop: ArrayList<MenuItemProps> ->
+                view.setData(prop)
             }
         }
     }

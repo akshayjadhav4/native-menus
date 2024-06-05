@@ -1,5 +1,9 @@
 import { ViewProps } from "react-native";
 
+type MenuItemProps = {
+  title: string;
+};
+
 export type NativeMenusViewProps = {
-  name?: string;
+  menuItems: MenuItemProps[];
 } & ViewProps;
