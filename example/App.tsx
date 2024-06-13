@@ -8,8 +8,16 @@ export default function App() {
         <Text>Dropdown Menus</Text>
         <NativeMenusView
           menuItems={[
-            { title: "Edit", onPress: () => console.log("Pressed Edit") },
-            { title: "Refresh", onPress: () => console.log("Pressed Refersh") },
+            {
+              title: "Edit",
+              icon: { android: "Edit" },
+              onPress: () => console.log("Pressed Edit"),
+            },
+            {
+              title: "Refresh",
+              onPress: () => console.log("Pressed Refersh"),
+              icon: { android: "Refresh" },
+            },
             { title: "Delete", onPress: () => console.log("Pressed Delete") },
           ]}
         />
