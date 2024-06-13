@@ -11,11 +11,17 @@ struct MenuItemProps: Record {
 class NativeMenusView: ExpoView {
     private let contentView: UIHostingController<DropdownMenuComponent>
     let viewModel = DropdownMenuViewModel()
+    let onPressEvent = EventDispatcher()
     required init(appContext: AppContext? = nil) {
-        contentView = UIHostingController(rootView: DropdownMenuComponent(viewModel: self.viewModel))
+        var onPress: ((Int) -> Void)?
+        contentView = UIHostingController(rootView: DropdownMenuComponent(viewModel: self.viewModel, onPress: { index in
+            onPress?(index)
+        }))
         
         super.init(appContext: appContext)
-        
+        onPress = { index in
+            self.onPressEvent(["index": index])
+        }
         clipsToBounds = true
         addSubview(contentView.view)
     }

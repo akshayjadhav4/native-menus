@@ -8,9 +8,9 @@ export default function App() {
         <Text>Dropdown Menus</Text>
         <NativeMenusView
           menuItems={[
-            { title: "Edit" },
-            { title: "Refresh" },
-            { title: "Delete" },
+            { title: "Edit", onPress: () => console.log("Pressed Edit") },
+            { title: "Refresh", onPress: () => console.log("Pressed Refersh") },
+            { title: "Delete", onPress: () => console.log("Pressed Delete") },
           ]}
         />
       </View>

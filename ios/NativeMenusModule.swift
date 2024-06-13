@@ -7,6 +7,9 @@ public class NativeMenusModule: Module {
     Name("NativeMenus")
 
     View(NativeMenusView.self) {
+        
+        Events("onPressEvent")
+        
       // Defines a setter for the `name` prop.
         Prop("menuItems") { (view: NativeMenusView, prop: [MenuItemProps]) in
             view.viewModel.menuItems = prop

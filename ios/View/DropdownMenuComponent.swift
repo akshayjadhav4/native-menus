@@ -9,13 +9,17 @@ import SwiftUI
 
 struct DropdownMenuComponent: View {
     @StateObject var viewModel: DropdownMenuViewModel
+    var menuItems: [MenuItemProps] {
+            return viewModel.menuItems
+    }
+    var onPress: (Int) -> Void
     var body: some View {
             Menu {
-                ForEach(viewModel.menuItems, id: \.title) { menu in
+                ForEach(menuItems.indices, id: \.self) { index in
                     Button() {
-                        print("Pressed")
+                        onPress(index)
                     } label: {
-                        Text(menu.title)
+                        Text(menuItems[index].title)
                     }
                 }
             } label: {
