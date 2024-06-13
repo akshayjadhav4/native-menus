@@ -9,6 +9,7 @@ import expo.modules.kotlin.records.Field
 import expo.modules.kotlin.records.Record
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
+import expo.modules.kotlin.viewevent.EventDispatcher
 
 class MenuItemProps : Record {
     @Field
@@ -17,10 +18,14 @@ class MenuItemProps : Record {
 
 class NativeMenusView(context: Context, appContext: AppContext) : ExpoView(context, appContext) {
     var menuItemsState by mutableStateOf(listOf<MenuItemProps>())
+    private val onPressEvent by EventDispatcher()
+
     internal  val composeView = ComposeView(context).also {
         it.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         it.setContent {
-            DropdownMenuComponent(menuItemsState)
+            DropdownMenuComponent(menuItemsState) {index ->
+                onPressEvent(mapOf("index" to index))
+            }
         }
         addView(it)
     }

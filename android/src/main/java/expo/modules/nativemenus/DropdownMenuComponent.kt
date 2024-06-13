@@ -21,7 +21,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun DropdownMenuComponent(menuItemsState: List<MenuItemProps>) {
+fun DropdownMenuComponent(menuItemsState: List<MenuItemProps>, onPress: (Int) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     Box(
         Modifier
@@ -34,11 +34,11 @@ fun DropdownMenuComponent(menuItemsState: List<MenuItemProps>) {
             Icon(Icons.Default.MoreVert, contentDescription = "Localized description")
         }
         DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            menuItemsState.forEach { menuItem ->
+            menuItemsState.forEachIndexed { index, menuItem ->
                 DropdownMenuItem(text = {
                     Text(menuItem.title)
                 }, onClick = {
-                    println("Pressed ${menuItem.title}")
+                    onPress(index)
                     expanded = false
                 })
             }
@@ -54,5 +54,7 @@ fun DropdownMenuComponentPreview() {
         MenuItemProps().apply { title = "Dummy Item 2" },
         MenuItemProps().apply { title = "Dummy Item 3" }
     )
-    DropdownMenuComponent(dummyData)
+    DropdownMenuComponent(menuItemsState = dummyData) {index ->
+        println("Pressed $index")
+    }
 }
