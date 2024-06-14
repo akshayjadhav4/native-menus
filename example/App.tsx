@@ -10,13 +10,13 @@ export default function App() {
           menuItems={[
             {
               title: "Edit",
-              icon: { android: "Edit" },
+              icon: { android: "Edit", ios: "pencil" },
               onPress: () => console.log("Pressed Edit"),
             },
             {
               title: "Refresh",
               onPress: () => console.log("Pressed Refersh"),
-              icon: { android: "Refresh" },
+              icon: { android: "Refresh", ios: "arrow.clockwise" },
             },
             { title: "Delete", onPress: () => console.log("Pressed Delete") },
           ]}

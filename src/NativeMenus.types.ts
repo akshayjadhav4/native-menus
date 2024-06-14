@@ -1,4 +1,5 @@
 import { ViewProps } from "react-native";
+import type { SFSymbol } from "sf-symbols-typescript";
 
 export type OnPressEvent = {
   index: number;
@@ -26,11 +27,11 @@ export type NativeMenusViewProps = {
     /**
      * An optional icon to display on the MenuItem, specified per platform.
      * @property {AndroidIcons} [android] - The icon name the Android platform.
-     * @property {string} [ios] - The icon name for the iOS platform.
+     * @property {SFSymbol} [ios] - The icon name for the iOS platform.
      */
     icon?: {
       android?: AndroidIcons;
-      ios?: string;
+      ios?: SFSymbol;
     };
   }[];
 };

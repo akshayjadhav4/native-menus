@@ -19,7 +19,14 @@ struct DropdownMenuComponent: View {
                     Button() {
                         onPress(index)
                     } label: {
-                        Text(menuItems[index].title)
+                        let item = menuItems[index]
+                        HStack(alignment: .center) {
+                            Text(item.title)
+                            Spacer()
+                            if let iconName = item.icon?.ios {
+                                Image(systemName: iconName)
+                            }
+                        }
                     }
                 }
             } label: {
