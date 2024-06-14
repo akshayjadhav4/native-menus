@@ -28,7 +28,9 @@
   "author": "Akshay Jadhav <akshayjadhav461999@gmail.com> (https://github.com/akshayjadhav4)",
   "license": "MIT",
   "homepage": "https://github.com/akshayjadhav4/native-menus#readme",
-  "dependencies": {},
+  "dependencies": {
+    "sf-symbols-typescript": "^2.0.0"
+  },
   "devDependencies": {
     "@types/react": "^18.0.25",
     "expo-module-scripts": "^3.5.2",
