@@ -1,11 +1,17 @@
 package expo.modules.nativemenus
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.filled.AccountBox
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Check
@@ -52,6 +58,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 fun IconWithString(icon: String) {
     val iconList: Map<String, ImageVector> = remember {
         mapOf(
+            "AccountBox" to Icons.Default.AccountBox,
+            "AccountCircle" to Icons.Default.AccountCircle,
+            "AddCircle" to Icons.Default.AccountCircle,
+            "Add" to Icons.Default.Add,
+            "ArrowBack" to Icons.AutoMirrored.Filled.ArrowBack,
+            "ArrowDropDown" to Icons.Default.ArrowDropDown,
+            "ArrowForward" to Icons.AutoMirrored.Filled.ArrowForward,
             "Build" to Icons.Default.Build,
             "Call" to Icons.Default.Call,
             "CheckCircle" to Icons.Default.CheckCircle,
