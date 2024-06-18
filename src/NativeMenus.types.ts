@@ -5,35 +5,35 @@ export type OnPressEvent = {
   index: number;
 };
 
+type NativeMenusBaseTypes = {
+  /** MenuItem Lebal */
+  title: string;
+
+  /**
+   * An optional icon to display on the MenuItem, specified per platform.
+   * @property {AndroidIcons} [android] - The filled icon name the Android platform.
+   * @property {SFSymbol} [ios] - The icon name for the iOS platform.
+   */
+  icon?: {
+    android?: AndroidIcons;
+    ios?: SFSymbol;
+  };
+};
+
 export type NativeMenus = {
-  menuItems: {
-    title: string;
-    icon?: {
-      android?: string;
-      ios?: string;
-    };
-  }[];
+  menuItems: NativeMenusBaseTypes[];
   onPressEvent?: (event: { nativeEvent: OnPressEvent }) => void;
 } & ViewProps;
 
+type MenusViewType = NativeMenusBaseTypes & {
+  /**
+   * A callback function that is called when the MenuItem is pressed.
+   */
+  onPress: () => void;
+};
+
 export type NativeMenusViewProps = {
-  menuItems: {
-    /** MenuItem Lebal */
-    title: string;
-    /**
-     * A callback function that is called when the MenuItem is pressed.
-     */
-    onPress: () => void;
-    /**
-     * An optional icon to display on the MenuItem, specified per platform.
-     * @property {AndroidIcons} [android] - The icon name the Android platform.
-     * @property {SFSymbol} [ios] - The icon name for the iOS platform.
-     */
-    icon?: {
-      android?: AndroidIcons;
-      ios?: SFSymbol;
-    };
-  }[];
+  menuItems: MenusViewType[];
 };
 
 /**
