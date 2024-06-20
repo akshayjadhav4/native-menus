@@ -2,19 +2,6 @@ import ExpoModulesCore
 import SwiftUI
 import UIKit
 
-struct MenuItemIcon: Record {
-  @Field
-  var ios: String?
-}
-
-struct MenuItemProps: Record {
-  @Field
-  var title: String = ""
-    
-  @Field
-  var icon: MenuItemIcon?
-}
-
 
 class NativeMenusView: ExpoView {
     private let contentView: UIHostingController<DropdownMenuComponent>
