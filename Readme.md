@@ -1,5 +1,7 @@
 
-# React Native Dropdown Menu (:construction: Experiment :construction:)
+# React Native Dropdown Menu
+
+:construction: Experiment :construction:
 
 This project is an simple React Native library built using Expo Module Core to create a native Dropdown menu. It uses Compose on the Android side and SwiftUI on the iOS side.
 
