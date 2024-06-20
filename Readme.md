@@ -73,7 +73,7 @@ const options = [
 
 **Android**          
 
-<img width="478"  alt="Without Icons Android" src="./screenshots/mix-Android.png">
+<img width="478"  alt="Without Icons Android" src="./screenshots/mix-android.png">
 
 **iOS**
 
